@@ -63,7 +63,7 @@ class ProgramRunner:
     
     def run_3_task(self):
         T3 = self.loader.loaded_modules["T3"]
-        task = T3(input("Введите желаемое количество паролей: "))
+        task = T3()
         self.results['3'] = task.run()
 
     def run_4_task(self):
