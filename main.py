@@ -56,7 +56,9 @@ class ProgramRunner:
 
     def run_2_task(self):
         T2 = self.loader.loaded_modules["T2"]
-        task = T2("Пример строки", 3)
+        input_tpl = input("Введите элементы кортежа через пробел: ")
+        items = tuple(input_tpl.split())
+        task = T2(items)
         self.results['2'] = task.run()
     
     def run_3_task(self):
@@ -75,8 +77,8 @@ class ProgramRunner:
         print("ЗАПУСК ПРОГРАММЫ С 4 ЗАДАЧАМИ")
         print("=" * 50)
 
-        self.run_1_task()
-        #self.run_2_task()
+        #self.run_1_task()
+        self.run_2_task()
         #self.run_3_task()
         #self.run_4_task()
 
