@@ -68,7 +68,7 @@ class ProgramRunner:
 
     def run_4_task(self):
         T4 = self.loader.loaded_modules["T4"]
-        task = T4(str(input()))
+        task = T4(int(input("Введите номер строки: ")))
         self.results['4'] = task.run()
     
 
@@ -77,10 +77,10 @@ class ProgramRunner:
         print("ЗАПУСК ПРОГРАММЫ С 4 ЗАДАЧАМИ")
         print("=" * 50)
 
-        #self.run_1_task()
-        #self.run_2_task()
+        self.run_1_task()
+        self.run_2_task()
         self.run_3_task()
-        #self.run_4_task()
+        self.run_4_task()
 
         print("\n" + "=" * 50)
         print("ВСЕ ЗАДАЧИ ВЫПОЛНЕНЫ")
@@ -93,4 +93,4 @@ if __name__ == "__main__":
     final_results = runner.run_all()
     print(f"\nВыполнено задач: {len(final_results)}")
     for x, y in final_results.items():
-        print(f"{x}: {y}\n\n\n")
+        print(f"{x}: {y}\n\n")

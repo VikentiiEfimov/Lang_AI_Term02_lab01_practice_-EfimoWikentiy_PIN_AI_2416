@@ -6,7 +6,7 @@ class T3:
         parols = []
         gen = self.password_generator()
         for i in range(5):
-            parols.append(f"{i+1}: {next(gen)}")
+            parols.append(f"{i+1}: {next(gen)} ")
         return " ".join(parols)
 
     def password_generator(self):
