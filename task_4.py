@@ -3,14 +3,16 @@ class T4:
         self.n = n
 
     def run(self):
-        element = []
-        for i in range(self.n+1):
-            element.append(str(next(BinomialSequence.generate(self.n,i))))
-        return " ".join(element)
+        lst = [str(x) for x in list(BinomialSequence.generate(self.n)) ] 
+        return " ".join(lst)
 
+import math
 class BinomialSequence:
-    def generate(n,k):
-        if n == 0:
-            yield 1 
-        else:
-            yield (next(BinomialSequence.generate(n-1,k)) if k!=n else 0) + (next(BinomialSequence.generate(n-1,k-1)) if k!=0 else 0)
+    def generate(n):
+        if n < 0:
+            return
+        current = 1
+        yield current
+        for k in range(1, n + 1):
+            current = math.factorial(n) // (math.factorial(k) * math.factorial(n-k))
+            yield current
